@@ -1,0 +1,131 @@
+
+.layout{
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 0;
+    background: #f0f2f5;
+    box-sizing: border-box;
+}
+
+.sider-children{
+  min-height: 100%;
+  margin-top: -.1px;
+  padding-top: .1px;
+  overflow: 'auto';
+  height: '100vh';
+  position: 'fixed';
+  left: 0;
+}
+
+.sider-children .logo{
+  display: inline-block;
+    margin: 0 0 0 12px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    vertical-align: middle;
+    animation: fade-in;
+    animation-duration: .3s;
+}
+
+.site-layout{
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 0;
+  background: #f0f2f5;
+  box-sizing: border-box
+}
+
+.header-menu-trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.header-menu-trigger:hover {
+  color: #1890ff;
+}
+
+.sider-children .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+.header{
+  padding: 0px;
+  width: 100%;
+  z-index: 9;
+  background: #fff;
+  height: 64px;
+  display: flex;
+  flex: 0 0 auto;
+  line-height: 64px;
+  display: block;
+}
+
+.header-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  box-sizing: border-box;
+}
+
+.header-menu-right{
+  display: flex;
+  float: right;
+  height: 64px;
+  margin-left: auto;
+  overflow: hidden;
+  padding: 0 12px;
+
+}
+
+.header-menu-right-search{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  padding: 0 12px;
+  transition: all,3s;
+}
+
+.header-menu-right-search-input{
+  margin-left: 12px;
+  width: 100%;
+  padding: 4px 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: none!important;
+}
+
+.header-menu-right-file{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.header-menu-right-badge{
+  padding: 0 12px;
+}
+
+.header-menu-right-badge-logo{
+  display: inline-block;
+  padding: 6px;
+  vertical-align: middle
+}
+
+.footer{
+  text-align: center;
+}
