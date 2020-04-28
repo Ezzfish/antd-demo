@@ -18,14 +18,20 @@
   left: 0;
 }
 
-.sider-children .logo{
+.sider-children-logo1{
   display: inline-block;
-    margin: 0 0 0 12px;
     color: #fff;
     font-weight: 600;
-    font-size: 20px;
-    vertical-align: middle;
-    animation: fade-in;
+    font-size: 30px;
+    animation-duration: .3s;
+    padding-right: 10%;
+}
+
+.sider-children-logo2{
+  display: inline-block;
+    color: #fff;
+    font-weight: 600;
+    font-size: 30px;
     animation-duration: .3s;
 }
 
@@ -138,6 +144,51 @@
   padding:0 12px;
 }
 
+.Contents-main{
+  position: relative;
+  margin: 24px;
+  transition: all .2s;
+}
+
+.Contents-main-wrap-block1{
+  margin-left: -12px;
+  margin-right:-12px;
+  display: flex;
+  flex-flow: row wrap;
+  box-sizing: border-box;
+}
+
+.Contents-main-wrap-block1-1{
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 24px;
+  display: block;
+  flex: 0 0 50%;
+  max-width: 50%;
+  min-height: 1px
+}
+
+.ant-card{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: "tnum","tnum";
+  position: relative;
+  background: #fff;
+  border-radius: 2px;
+  transition: all .3s;
+  display: block;
+}
+
+.ant-card-body{
+  padding: 20px 24px 8px;
+  display: block;
+}
 .footer{
   text-align: center;
 }

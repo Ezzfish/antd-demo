@@ -77,14 +77,16 @@ class Layoutall extends React.Component{
         <Layout>
             <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
                 <div className="sider-children">
-                    <div >
-                        <img srl="./logo.f0355d39.svg"/>
-                        <h1 className="logo" >
-                            <span>ant design</span>
-                        </h1>
-                    </div>
-                    <div className="logo" />
+
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+                        <Menu.Item key="0">
+                            <span class="sider-children-logo1" >
+                                ant 
+                            </span>
+                            <span class="sider-children-logo2" >
+                                 design
+                            </span>    
+                        </Menu.Item>
                         <Menu.Item key="1">
                             <UserOutlined />
                             <span>nav 1</span>
@@ -147,7 +149,7 @@ class Layoutall extends React.Component{
                     
                 </Header>
                 <div>
-                    <contents/>
+                    <Contents/>
                 </div>
                 <Footer className="footer">
                     Ant Design ©2018 Created by Ant UED
