@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Layout,Menu,Tooltip,Badge } from 'antd';
+import { Layout, Menu, Tooltip, Badge, Dropdown, Avatar } from 'antd';
 import 'antd/dist/antd.css';
 import Contents from './Contents'
+
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -12,9 +13,55 @@ import {
     SearchOutlined,
     QuestionCircleOutlined,
     BellOutlined,
+    UserAddOutlined,
+    SettingOutlined,
+    LogoutOutlined,
+    GlobalOutlined,
 } from '@ant-design/icons';
 
 const { Header, Footer,Sider, Content } = Layout;
+
+const rightmenu = (
+    <Menu>
+        <Menu.Item key="0">
+            <a target="_blank" rel="noopener noreferrer" >
+                <UserAddOutlined />个人中心
+            </a>
+        </Menu.Item>
+        <Menu.Item key="1">
+            <a target="_blank" rel="noopener noreferrer" >
+                <SettingOutlined />个人设置
+            </a>
+        </Menu.Item>
+        <Menu.Divider />
+        <Menu.Item key="3" >
+            <a target= "_blank" rel="noopener noreferrer">
+                <LogoutOutlined />退出登录
+            </a>   
+    </Menu.Item>
+    </Menu>
+)
+
+const languagemenu = (
+    <Menu>
+        <Menu.Item key="0">
+            <a target="_blank" rel="noopener noreferrer" >
+                简体中文
+            </a>
+        </Menu.Item>
+        <Menu.Item key="1">
+            <a target="_blank" rel="noopener noreferrer" >
+                繁体中文
+            </a>
+        </Menu.Item>
+        <Menu.Item key="3" >
+            <a target="_blank" rel="noopener noreferrer">
+                English
+            </a>
+        </Menu.Item>
+    </Menu>
+);
+
 class Layoutall extends React.Component{
     state = {
         collapsed: false,
@@ -25,7 +72,7 @@ class Layoutall extends React.Component{
             collapsed: !this.state.collapsed,
         });
     };  
-render (){
+    render (){
     return(
         <Layout>
             <Sider trigger={null} collapsible collapsed={this.state.collapsed}>
@@ -79,6 +126,21 @@ render (){
                                     </span>
                                 </Badge>
                             </div>
+                            <div class="header-menu-right-user">
+                                <Dropdown overlay={rightmenu}>
+                                    <a class="header-menu-right-use-dropdown-link" onClick={e => e.preventDefault()}>
+                                        <span class="header-menu-right-use-dropdown-link-a">
+                                            <Avatar >u</Avatar>
+                                        </span>
+                                        <span>Ezzfish</span>   
+                                    </a>
+                                </Dropdown>
+                            </div>
+                            <div class="header-menu-right-language">
+                                <Dropdown overlay={languagemenu}>
+                                    <GlobalOutlined />
+                                </Dropdown>
+                            </div>
                         </span>
                        
                     </div>
@@ -93,7 +155,7 @@ render (){
             </Layout>
         </Layout>
     )
-}
+    }
 }
 
 export default Layoutall;

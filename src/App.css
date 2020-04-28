@@ -126,6 +126,18 @@
   vertical-align: middle
 }
 
+.header-menu-right-user{
+  padding:0 12px;
+}
+
+.header-menu-right-use-dropdown-link-a{
+  padding:0 6px;
+}
+
+.header-menu-right-language{
+  padding:0 12px;
+}
+
 .footer{
   text-align: center;
 }
