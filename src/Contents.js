@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, } from 'antd';
 import './App.css';
-
+import Block1 from './Block1'
 
 class Contents extends React.Component{
     render(){
@@ -9,55 +9,12 @@ class Contents extends React.Component{
             <div className = 'Contents' >
                 <main class="Contents-main">
                     <div class="Contents-main-wrap">
-                        <div class="Contents-main-wrap-block1" >
-                            <div class="Contents-main-wrap-block1-1">
-                                <div class="ant-card">
-                                    <div class="ant-card-body">
-                                        <div class="Contents-main-wrap-block1-1-pages">
-                                            <div class="Contents-main-wrap-block1-1-pages-1"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-2"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-3"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Contents-main-wrap-block1-1">
-                                <div class="ant-card">
-                                    <div class="ant-card-body">
-                                        <div class="Contents-main-wrap-block1-1-pages">
-                                            <div class="Contents-main-wrap-block1-1-pages-1"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-2"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-3"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Contents-main-wrap-block1-1">
-                                <div class="ant-card">
-                                    <div class="ant-card-body">
-                                        <div class="Contents-main-wrap-block1-1-pages">
-                                            <div class="Contents-main-wrap-block1-1-pages-1"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-2"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-3"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="Contents-main-wrap-block1-1">
-                                <div class="ant-card">
-                                    <div class="ant-card-body">
-                                        <div class="Contents-main-wrap-block1-1-pages">
-                                            <div class="Contents-main-wrap-block1-1-pages-1"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-2"></div>
-                                            <div class="Contents-main-wrap-block1-1-pages-3"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="Contents-main-grid">
+                            <Block1/>
+                            <div class="Contents-main-wrap-block2" ></div>
+                            <div class="Contents-main-wrap-block3" ></div>
+                            <div class="Contents-main-wrap-block4" ></div>
                         </div>
-                        <div class="Contents-main-wrap-block2" ></div>
-                        <div class="Contents-main-wrap-block3" ></div>
-                        <div class="Contents-main-wrap-block4" ></div>
                     </div>
                 </main>
             </div>

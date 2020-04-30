@@ -1,0 +1,61 @@
+.Contents-main-wrap-block1-action{
+    position: absolute;
+    top: 4px;
+    right: 0;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.Contents-main-wrap-block1-trendItem{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.Contents-main-wrap-block1-1-pages{
+    position: relative;
+}
+
+.Contents-main-wrap-block1-1-pages-1{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.Contents-main-wrap-block1-1-pages-1-metaWrap{
+    float:left;
+}
+
+.Contents-main-wrap-block1-1-pages-1-meta{
+    height: 22px;
+    color: rgba(0,0,0,.45);
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.Contents-main-wrap-block1-1-pages-1-total{
+    height: 38px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    overflow: hidden;
+    color: rgba(0,0,0,.85);
+    font-size: 30px;
+    line-height: 38px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.Contents-main-wrap-block1-1-pages-2{
+    height: 46px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 12px
+}
+
+.Contents-main-wrap-block1-1-pages-2-contentFixed{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}

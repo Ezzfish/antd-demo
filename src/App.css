@@ -144,10 +144,22 @@
   padding:0 12px;
 }
 
+.Contents{
+  min-height: 2431px;
+}
+
 .Contents-main{
   position: relative;
   margin: 24px;
   transition: all .2s;
+  flex: auto;
+  min-height: 0;
+}
+
+.Contents-main-grid{
+  width: 100%;
+  min-height: 100%;
+  transition: .3s;
 }
 
 .Contents-main-wrap-block1{
@@ -165,7 +177,8 @@
   display: block;
   flex: 0 0 50%;
   max-width: 50%;
-  min-height: 1px
+  min-height: 1px;
+  box-sizing: border-box;
 }
 
 .ant-card{
