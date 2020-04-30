@@ -1,4 +1,4 @@
-.Contents-main-wrap-block1-action{
+.block1-action{
     position: absolute;
     top: 4px;
     right: 0;
@@ -6,34 +6,44 @@
     cursor: pointer;
 }
 
-.Contents-main-wrap-block1-trendItem{
+.block1-trendItem{
     display: inline-block;
     font-size: 14px;
     line-height: 22px;
+    margin-left: 16px;
 }
 
-.Contents-main-wrap-block1-1-pages{
+.block-trendText{
+    margin-left: 8px;
+    color: rgba(0,0,0,.85);
+}
+
+.block1-card{
+    size: ;
+}
+
+.block1-1-pages{
     position: relative;
 }
 
-.Contents-main-wrap-block1-1-pages-1{
+.block1-1-pages-1{
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
-.Contents-main-wrap-block1-1-pages-1-metaWrap{
+.block1-1-pages-1-metaWrap{
     float:left;
 }
 
-.Contents-main-wrap-block1-1-pages-1-meta{
+.block1-1-pages-1-meta{
     height: 22px;
     color: rgba(0,0,0,.45);
     font-size: 14px;
     line-height: 22px;
 }
 
-.Contents-main-wrap-block1-1-pages-1-total{
+.block1-1-pages-1-total{
     height: 38px;
     margin-top: 4px;
     margin-bottom: 0;
@@ -46,14 +56,14 @@
     word-break: break-all;
 }
 
-.Contents-main-wrap-block1-1-pages-2{
+.block1-1-pages-2{
     height: 46px;
     position: relative;
     width: 100%;
     margin-bottom: 12px
 }
 
-.Contents-main-wrap-block1-1-pages-2-contentFixed{
+.block1-1-pages-2-contentFixed{
     position: absolute;
     bottom: 0;
     left: 0;

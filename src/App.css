@@ -162,7 +162,7 @@
   transition: .3s;
 }
 
-.Contents-main-wrap-block1{
+.block1-row{
   margin-left: -12px;
   margin-right:-12px;
   display: flex;
@@ -170,7 +170,7 @@
   box-sizing: border-box;
 }
 
-.Contents-main-wrap-block1-1{
+.block1-col{
   padding-left: 12px;
   padding-right: 12px;
   margin-bottom: 24px;
@@ -181,27 +181,6 @@
   box-sizing: border-box;
 }
 
-.ant-card{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  color: rgba(0,0,0,.65);
-  font-size: 14px;
-  font-variant: tabular-nums;
-  line-height: 1.5715;
-  list-style: none;
-  font-feature-settings: "tnum","tnum";
-  position: relative;
-  background: #fff;
-  border-radius: 2px;
-  transition: all .3s;
-  display: block;
-}
-
-.ant-card-body{
-  padding: 20px 24px 8px;
-  display: block;
-}
 .footer{
   text-align: center;
 }
