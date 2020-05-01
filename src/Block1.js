@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import { Tooltip,Row,Col,Card } from 'antd';
-import './App.css';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import { Tooltip,Row,Col,Card } from 'antd'
+import moment from 'moment'
+import './App.css'
 import {
     InfoCircleOutlined,
     CaretUpOutlined,
     CaretDownOutlined,
-} from '@ant-design/icons';
+} from '@ant-design/icons'
 import'./Block1.css'
+import Chart2 from'./Chart2'
 
 function IndexDescription() {
     return(
@@ -55,6 +58,27 @@ function CardTitle1(){
          )
 }
 
+function CardTitle2() {
+    return (
+        <div class="block1-1-pages">
+            <div class="block1-1-pages-1">
+                <div class="=block1-1-pages-1-metaWrap">
+                    <div class="block1-1-pages-1-meta">
+                        <span>访问量</span>
+                        {IndexDescription()}
+                    </div>
+                    <div class="block1-1-pages-1-total">
+                        <span>8,846</span>
+                    </div>
+                </div>
+            </div>
+            <div class="block1-1-pages-2">
+                {<Chart2/>}
+            </div>
+            <div class="block1-1-pages-3"></div>
+        </div>
+    )
+}
 
 
 
@@ -69,8 +93,8 @@ class Block1 extends React.Component{
                             </Card>
                     </Col>
                     <Col class="block1-col" xs={24} sm={12} md={12} lg={12} xl={6}>
-                        <Card class="block1-card" title="Card title" bordered={false}>
-                            Card content
+                        <Card class="block1-card" title={CardTitle2()} bordered={false}>
+                            日访问量1,234
                             </Card>
                     </Col>
                     <Col class="block1-col" xs={24} sm={12} md={12} lg={12} xl={6}>

@@ -18,9 +18,16 @@
     color: rgba(0,0,0,.85);
 }
 
-.block1-card{
-    size: ;
+.ant-card{
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
+.ant-card-body{
+    padding:16px 24px 16px;
+}
+
 
 .block1-1-pages{
     position: relative;
@@ -60,7 +67,6 @@
     height: 46px;
     position: relative;
     width: 100%;
-    margin-bottom: 12px
 }
 
 .block1-1-pages-2-contentFixed{
