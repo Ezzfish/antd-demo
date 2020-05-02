@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons'
 import'./Block1.css'
 import Chart2 from'./Chart2'
+import Chart3 from './Chart3'
 
 function IndexDescription() {
     return(
@@ -53,7 +54,6 @@ function CardTitle1(){
                     </div>
                 </div>
             </div>
-            <div class="block1-1-pages-3"></div>
         </div>
          )
 }
@@ -75,12 +75,30 @@ function CardTitle2() {
             <div class="block1-1-pages-2">
                 {<Chart2/>}
             </div>
-            <div class="block1-1-pages-3"></div>
         </div>
     )
 }
 
-
+function CardTitle3() {
+    return (
+        <div class="block1-1-pages">
+            <div class="block1-1-pages-1">
+                <div class="=block1-1-pages-1-metaWrap">
+                    <div class="block1-1-pages-1-meta">
+                        <span>支付笔数</span>
+                        {IndexDescription()}
+                    </div>
+                    <div class="block1-1-pages-1-total">
+                        <span>6,560</span>
+                    </div>
+                </div>
+            </div>
+            <div class="block1-1-pages-2">
+                {<Chart3 />}
+            </div>
+        </div>
+    )
+}
 
 class Block1 extends React.Component{
     render(){
@@ -94,12 +112,12 @@ class Block1 extends React.Component{
                     </Col>
                     <Col class="block1-col" xs={24} sm={12} md={12} lg={12} xl={6}>
                         <Card class="block1-card" title={CardTitle2()} bordered={false}>
-                            日访问量1,234
+                            日访问量 1,234
                             </Card>
                     </Col>
                     <Col class="block1-col" xs={24} sm={12} md={12} lg={12} xl={6}>
-                        <Card class="block1-card" title="Card title" bordered={false}>
-                            Card content
+                        <Card class="block1-card" title={CardTitle3()} bordered={false}>
+                            转化率 60%
                             </Card>
                     </Col>
                     <Col class="block1-col" xs={24} sm={12} md={12} lg={12} xl={6}>
