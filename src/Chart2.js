@@ -106,7 +106,7 @@ class Chart2 extends React.Component {
                         type="area" 
                         position="month*temperature" 
                         size={2}
-                        color="city" 
+                        color="rgb(100,0,255)" 
                         shape="smooth" />
                 </Chart>
             </div>
