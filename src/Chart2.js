@@ -102,6 +102,7 @@ class Chart2 extends React.Component {
                         offset={30}
                         Opacity={0.5}
                     />
+                    <Axis name="genre" visible={false} />
                     <Geom  
                         type="area" 
                         position="month*temperature" 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button, } from 'antd';
 import './App.css';
 import Block1 from './Block1'
+import Block2 from './Block2'
 
 class Contents extends React.Component{
     render(){
@@ -11,7 +12,7 @@ class Contents extends React.Component{
                     <div class="Contents-main-wrap">
                         <div class="Contents-main-grid">
                             <Block1/>
-                            <div class="Contents-main-wrap-block2" ></div>
+                            <Block2/>
                             <div class="Contents-main-wrap-block3" ></div>
                             <div class="Contents-main-wrap-block4" ></div>
                         </div>
