@@ -9,9 +9,9 @@ import {
     CaretDownOutlined,
 } from '@ant-design/icons'
 import'./Block1.css'
-import Chart2 from './Chart2'
-import Chart3 from './Chart3'
-import Chart4 from './Chart4'
+import Chart2 from './Block1Chart2'
+import Chart3 from './Block1Chart3'
+import Chart4 from './Block1Chart4'
 
 function IndexDescription() {
     return(

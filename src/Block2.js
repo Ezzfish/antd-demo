@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, DatePicker,Row, Col } from 'antd'
 import moment from 'moment';
-import Block2Chart1 from './Block2Chart1'
+import Block2Chart from './Block2Chart'
 import Block2Item from './Block2Item'
 
 
@@ -32,7 +32,7 @@ const tabListNoTitle = [
     }
 ]
 
-function salesContent() {
+function salesContent(ChartName,ItemName) {
     return (
         <div >
             <Row 
@@ -43,11 +43,11 @@ function salesContent() {
                     marginBottom: -16 
                 }}
             >
-                <Col xs={24} sm={12} md={12} lg={12} xl={15}>
-                    <Block2Chart1 />
+                <Col xs={24} sm={12} md={12} lg={12} xl={16}>
+                    <Block2Chart name={ChartName}/>
                 </Col>
-                <Col xs={24} sm={12} md={12} lg={12} xl={9}>
-                    <Block2Item/>
+                <Col xs={24} sm={12} md={12} lg={12} xl={8}>
+                    <Block2Item name={ItemName}/>
                 </Col>
             </Row>
         </div>
@@ -55,8 +55,8 @@ function salesContent() {
 }
 
 const contentListNoTitle={
-    sale: salesContent(),
-    visit:<p>content2</p>,
+    sale: salesContent('销售趋势','门店销售额排名'),
+    visit: salesContent('访问量趋势','门店访问量排名'),
 }
 
 class Block2 extends React.Component{
@@ -73,7 +73,7 @@ class Block2 extends React.Component{
     render(){
         return(
             <Card
-                style={{ width: '100%' }}
+                style={{ width: '100%',marginBottom:16 }}
                 tabList={tabListNoTitle}
                 activeTabKey={this.state.noTitleKey}
                 tabBarExtraContent={extraContent()}

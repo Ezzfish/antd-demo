@@ -15,7 +15,7 @@ import {
     Util
 } from "bizcharts";
 
-class Block2Chart1 extends React.Component {
+class Block2Chart extends React.Component {
     render() {
         const data = [
             {
@@ -74,10 +74,10 @@ class Block2Chart1 extends React.Component {
         };
         return (
             <div style={{ paddingLeft:32,paddingBottom:32}}>
-                <h4 style={{ marginBottom: 20 }}>销售趋势</h4>
+                <h4 style={{ marginBottom: 20 }}>{this.props.name}</h4>
                 <Chart
-                    height={254}
-                    width={"auto"}
+                    height={284}
+                    width={1000}
                     data={data} scale={cols} forceFit>
                     <Axis name="month" />
                     <Axis name="sales" />
@@ -98,4 +98,4 @@ class Block2Chart1 extends React.Component {
     }
 }
 
-export default Block2Chart1;
+export default Block2Chart;

@@ -1,30 +1,55 @@
-import {Descriptions} from 'antd'
+import {List,Card, Row,Avatar, Typography} from 'antd'
 import React from "react";
-import DescriptionsItem from 'antd/lib/descriptions/Item';
 
-function DesItem(label){
+function ListItem(label){ 
     return(
-    <DescriptionsItem span={3} label={label }>
-        工专路{label+1}号店
-        <span style={{float:'right'}}>
-            323,234
-        </span>
-    </DescriptionsItem>
+        <div>
+            {   label<=3?
+                <Avatar size="small">{label}</Avatar>:
+                <div style={{
+                    width:24,
+                    height:24,
+                    textAlign:'center'
+                }}>{label}</div>
+            }
+        </div>
+   
     )
 }
 
+const listData = [];
+for (let i = 1; i < 7; i++) {
+    listData.push({
+        num:`${i}`,
+        title:`工专路${i-1}号店`
+    })
+}
+
 class Block2Item extends React.Component{
+    
     render(){
         return(
-            <Descriptions title="门店销售额排行">
-                {DesItem(0)}
-                {DesItem(1)}
-                {DesItem(2)}
-                {DesItem(3)}
-                {DesItem(4)}
-                {DesItem(5)}
-                {DesItem(6)}
-            </Descriptions>
+            <div>
+                <h4 style={{paddingLeft:24}}>{this.props.name}</h4>
+                <List
+                    itemLayout="vertical"
+                    size="large"
+                    split={false}
+                    dataSource={listData}
+                    renderItem={item => (
+                        <List.Item style={{ 
+                            display: 'flex', 
+                            justifyContent: 'flex-start',
+                            alignItems:'center',
+                            paddingTop:0
+                            }}>    
+                            <span style={{margin:'8px'}}>{ListItem(item.num)}</span>
+                            <span style={{}}>{item.title}</span>
+                            <span style={{marginLeft:'auto'}}>323,234</span>
+                        </List.Item>
+                    )}
+                />
+            </div>
         )
     }
 }
