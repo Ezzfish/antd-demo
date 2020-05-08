@@ -2,6 +2,7 @@ import React from 'react'
 import {Row, Col, Card, Menu,Dropdown } from 'antd'
 import { DashOutlined } from '@ant-design/icons';
 import Block3Chart from './Block3Chart.js'
+import BlockThreeTable from './BlockThreeTable.js'
 const menu=(
     <Menu>
         <Menu.Item>
@@ -29,7 +30,8 @@ class Block3 extends React.Component {
                     <Col xs={24} sm={12} md={12} lg={12} xl={12}>
                         <Card class="block1-card" title={'线上热门搜索'} extra={ExtraMenu()} bordered={false}>
                             <Block3Chart/>
-                            </Card>
+                            <BlockThreeTable/>
+                        </Card>
                     </Col>
                     <Col xs={24} sm={12} md={12} lg={12} xl={12}>
                         <Card class="block1-card" title={1} bordered={false}>
@@ -41,5 +43,6 @@ class Block3 extends React.Component {
         )
     }
 }
+
 
 export default Block3;

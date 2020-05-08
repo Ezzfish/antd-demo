@@ -59,12 +59,12 @@ class Chart3 extends React.Component {
         return (
             <div>
                 <Chart 
-                height={60}
+                height={50}
                 width={"auto"}
-                padding={[20, 30, 5, 5]}
+                    padding={"auto"}
                 data={data} scale={cols} forceFit>
-                    <Axis name="year" />
-                    <Axis name="sales" />
+                    <Axis name="year" visible={false} />
+                    <Axis name="sales" visible={false} />
                     <Tooltip
                         crosshairs={{
                             title: "data.temperature",

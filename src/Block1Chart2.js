@@ -87,9 +87,9 @@ class Chart2 extends React.Component {
         return (
             <div>
                 <Chart 
-                height={60} 
-                width={350} 
-                padding={[20, 30, 5, 5]}
+                height={50} 
+                width={340} 
+                padding={'auto'}
                 data={data} scale={cols} forceFit>
                     <Legend />
                     <Tooltip
@@ -102,7 +102,8 @@ class Chart2 extends React.Component {
                         offset={30}
                         Opacity={0.5}
                     />
-                    <Axis name="genre" visible={false} />
+                    <Axis name="month" visible={false} />
+                    <Axis name="temperature" visible={false} />
                     <Geom  
                         type="area" 
                         position="month*temperature" 
@@ -116,23 +117,3 @@ class Chart2 extends React.Component {
 }
 
 export default Chart2;
-/*
-<Geom
-    type="point"
-    position="month*temperature"
-    size={4}
-    shape={"circle"}
-    color={"city"}
-    style={{
-        stroke: "#fff",
-        lineWidth: 1
-    }}
-/>
-<Geom
-                        type="line"
-                        position="month*temperature"
-                        size={2}
-                        color={"city"}
-                        shape={"smooth"}
-                    />
-*/

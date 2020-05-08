@@ -29,7 +29,7 @@ function Proportion(){
             <div class="block1-trendItem">
                 <span>
                     周同比
-                            <span class="block-trendText">12%</span>
+                    <span class="block-trendText">12%</span>
                     <span ><CaretUpOutlined style={{ fontSize: '16px', color: '#f5222d', margin: '4px' }} /></span>
                 </span>
             </div>

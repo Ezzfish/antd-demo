@@ -26,11 +26,12 @@ class Chart4 extends React.Component {
         return (
             <div>
                 <Chart 
-                    height={60}
+                    height={50}
                     width={"auto"}
-                    padding={[0, 0, 20, 10]}
+                    padding={'auto'}
                     data={data} forceFit>
                     >
+                    <Axis name="population" visible={false} />
                     <Coord transpose />
                     <Geom type="interval" color="rgb(19,194,194)" position="population*0.01" />
                 </Chart>
