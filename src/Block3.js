@@ -1,8 +1,10 @@
 import React from 'react'
-import {Row, Col, Card, Menu,Dropdown } from 'antd'
+import {Row, Col, Card, Menu,Dropdown,Radio } from 'antd'
 import { DashOutlined } from '@ant-design/icons';
 import Block3Chart from './Block3Chart.js'
 import BlockThreeTable from './BlockThreeTable.js'
+import BlockThreeChartTwo from './BlockThreeChartTwo.js'
+
 const menu=(
     <Menu>
         <Menu.Item>
@@ -22,21 +24,80 @@ function ExtraMenu(){
     )
 }
 
+
+ function RadioContent(label){
+    return (
+        <div>
+            {(label == 'a') && <BlockThreeChartTwo/>}
+            {(label == 'b') && <div>Contentb</div>}
+            {(label == 'c') && <div>Contentc</div>}
+        </div>
+    )
+}
+
+
+
+class RadioCard extends React.Component{
+    state={
+        label:'a'
+    }
+
+    handleRadioChange = e => {
+        this.setState({label:e.target.value})
+    }
+
+    ExtraRadio() {
+        return (
+            <span>
+                <Radio.Group style={{ marginRight: 16 }} onChange={this.handleRadioChange} defaultValue="a">
+                    <Radio.Button value='a'>全部渠道</Radio.Button>
+                    <Radio.Button value='b'>线上</Radio.Button>
+                    <Radio.Button value='c'>门店</Radio.Button>
+                </Radio.Group>
+                {ExtraMenu()}
+            </span>
+        )
+    }
+
+
+    render(){
+        const{label} = this.state
+        return(
+            <Card
+                class="block1-card"
+                title={'销售额类别占比'}
+                extra={this.ExtraRadio()}
+                bordered={false}
+            >
+                {RadioContent(label)}
+            </Card>  
+        )
+    }
+}
+
+
+
+
+
+
 class Block3 extends React.Component {
     render() {
         return (
             <div>
                 <Row gutter={[8, 16]}>
-                    <Col xs={24} sm={12} md={12} lg={12} xl={12}>
-                        <Card class="block1-card" title={'线上热门搜索'} extra={ExtraMenu()} bordered={false}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                        <Card 
+                            class="block1-card" 
+                            title={'线上热门搜索'} 
+                            extra={ExtraMenu()} 
+                            bordered={false}
+                        >
                             <Block3Chart/>
                             <BlockThreeTable/>
                         </Card>
                     </Col>
-                    <Col xs={24} sm={12} md={12} lg={12} xl={12}>
-                        <Card class="block1-card" title={1} bordered={false}>
-                            日销售额￥12,423
-                            </Card>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                        <RadioCard/>
                     </Col>
                 </Row>
             </div>
