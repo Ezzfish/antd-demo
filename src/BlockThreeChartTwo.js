@@ -18,51 +18,28 @@ import {
 class BLockThreeChartTwo extends React.Component{
     render(){
         const data = [
-            { item: '家用电器', count: 4544, percent: 0.2879 },
-            { item: '食用酒水', count: 3321, percent: 0.2104 },
-            { item: '个户健康', count: 3113, percent: 0.1973 },
-            { item: '服饰箱包', count: 2341, percent: 0.1483 },
-            { item: '母婴用品', count: 1231, percent: 0.078 },
-            { item: '其他', count: 1231, percent: 0.078 },
+            { name: '家用电器', value: 28.79 },
+            { name: '食用酒水', value: 21.04 },
+            { name: '个户健康', value: 19.73 },
+            { name: '服饰箱包', value: 14.83 },
+            { name: '母婴用品', value: 13.8 },
+            { name: '其他', value: 9.0 },
         ];
-
-        const cols = {
-            percent: {
-                formatter: val => (val = `${val * 100}%`),
-            },
-        };
-
         return(
-            <div style={{size:400*400}}>
+            <div>
                 <Chart
-                    height={400}
+                    height={446}
                     width={400}
                     data={data}
-                    scale={cols}
                     forceFit
                 >
                     <Coord type="theta" radius={0.65} innerRadius={0.75}/>
-                    <Legend
-                        position="right"
-                    />
-                    <Tooltip
-                        showTitle={false}
-                        itemTpl='<li><span style="background-color:{color};" class="g2-tooltip-marker"></span>{name}: {value}</li>'
-                    />
+                    <Legend position="right" />
+                    <Tooltip showTitle = {false} />
                     <Geom
                         type="interval"
-                        position="precent"
-                        color="item"
-                        Tooltip={[
-                            'item*percent',
-                            (item,percent)=>{
-                                percent=`${percent*100}%`
-                                return{
-                                    name:item,
-                                    value:percent,
-                                }
-                            }
-                        ]}
+                        position="value"
+                        color="name"
                     />
                 </Chart>
             </div>

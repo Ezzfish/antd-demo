@@ -88,8 +88,13 @@ function onChange(pagination, filters, sorter, extra) {
 class BlockThreeTable extends React.Component{
     render(){
         return(
-            <div>
-                <Table pagination={{ pageSize: 6, size: 'small' }} size={"small"} columns={columns} dataSource={data} onChange={onChange} />
+            <div >
+                <Table 
+                    pagination={{ pageSize: 6, size: 'small' }} 
+                    size={"small"} columns={columns} 
+                    dataSource={data} 
+                    onChange={onChange}
+                />
             </div>
             )
     }

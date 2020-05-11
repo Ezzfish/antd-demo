@@ -4,6 +4,7 @@ import './App.css';
 import Block1 from './Block1'
 import Block2 from './Block2'
 import Block3 from './Block3'
+import BlockFour from './BlockFour.js'
 
 class Contents extends React.Component{
     render(){
@@ -15,7 +16,7 @@ class Contents extends React.Component{
                             <Block1/>
                             <Block2/>
                             <Block3/>
-                            <div class="Contents-main-wrap-block4" ></div>
+                            <BlockFour/>
                         </div>
                     </div>
                 </main>

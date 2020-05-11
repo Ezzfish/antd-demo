@@ -64,6 +64,7 @@ class RadioCard extends React.Component{
         const{label} = this.state
         return(
             <Card
+                style={{ height: 543.5 }}
                 class="block1-card"
                 title={'销售额类别占比'}
                 extra={this.ExtraRadio()}
@@ -84,9 +85,10 @@ class Block3 extends React.Component {
     render() {
         return (
             <div>
-                <Row gutter={[8, 16]}>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                <Row  gutter={[8, 16]}>
+                    <Col  xs={24} sm={24} md={24} lg={24} xl={12}>
                         <Card 
+                            style={{ height: '100%' }}
                             class="block1-card" 
                             title={'线上热门搜索'} 
                             extra={ExtraMenu()} 
@@ -96,7 +98,7 @@ class Block3 extends React.Component {
                             <BlockThreeTable/>
                         </Card>
                     </Col>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                    <Col  xs={24} sm={24} md={24} lg={24} xl={12}>
                         <RadioCard/>
                     </Col>
                 </Row>
