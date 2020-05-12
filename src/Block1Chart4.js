@@ -14,7 +14,7 @@ import {
     Facet,
     Util
 } from "bizcharts";
-
+import ReactResizeDetector, { withResizeDetector } from "react-resize-detector";
 class Chart4 extends React.Component {
     render() {
         const data = [
@@ -26,11 +26,10 @@ class Chart4 extends React.Component {
         return (
             <div>
                 <Chart 
-                    height={50}
-                    width={"auto"}
-                    padding={'auto'}
-                    data={data} forceFit>
-                    >
+                    width={this.props.width}
+                    height={this.props.height}
+                    data={data} >
+                    
                     <Axis name="population" visible={false} />
                     <Coord transpose />
                     <Geom type="interval" color="rgb(19,194,194)" position="population*0.01" />
@@ -41,4 +40,4 @@ class Chart4 extends React.Component {
 }
 
 
-export default Chart4;
+export default withResizeDetector(Chart4);

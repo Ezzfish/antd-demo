@@ -1,6 +1,7 @@
 import {List,Card, Row,Avatar, Typography} from 'antd'
 import React from "react";
 
+
 function ListItem(label){ 
     return(
         <div>
@@ -54,4 +55,4 @@ class Block2Item extends React.Component{
     }
 }
 
-export default Block2Item
+export default Block2Item;

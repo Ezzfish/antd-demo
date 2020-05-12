@@ -14,7 +14,7 @@ import {
     Facet,
     Util
 } from "bizcharts";
-
+import ReactResizeDetector, { withResizeDetector } from "react-resize-detector";
 class Block2Chart extends React.Component {
     render() {
         const data = [
@@ -77,8 +77,8 @@ class Block2Chart extends React.Component {
                 <h4 style={{ marginBottom: 20 }}>{this.props.name}</h4>
                 <Chart
                     height={284}
-                    width={1000}
-                    data={data} scale={cols} forceFit>
+                    width={this.props.width-32}
+                    data={data} scale={cols}>
                     <Axis name="month" />
                     <Axis name="sales" />
                     <Tooltip
@@ -98,4 +98,4 @@ class Block2Chart extends React.Component {
     }
 }
 
-export default Block2Chart;
+export default withResizeDetector(Block2Chart);

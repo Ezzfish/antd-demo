@@ -1,18 +1,20 @@
 import React from "react";
 import {
-    G2,
     Chart,
     Geom,
-    Axis,
     Coord,
-    Tooltip,
     Label,
-    Legend,
-    View,
     Guide,
     Shape,
     Facet,
-    Util
+    Util,
+    Coordinate,
+    Interval,
+    Axis,
+    Tooltip,
+    Legend,
+    View,
+    Annotation,
 } from "bizcharts";
 
 class BLockThreeChartTwo extends React.Component{
@@ -31,15 +33,36 @@ class BLockThreeChartTwo extends React.Component{
                     height={446}
                     width={400}
                     data={data}
-                    forceFit
-                >
-                    <Coord type="theta" radius={0.65} innerRadius={0.75}/>
+                    autoFit
+                >   
+                    <Annotation.Text
+                        position={['50%', '45%']}
+                        content="销售额"
+                        style={{
+                            lineHeight: '240px',
+                            fontSize: '20',
+                            fill: '#262626',
+                            textAlign: 'center',
+                        }}
+                    />  
+                    <Annotation.Text
+                        position={['50%', '55%']}
+                        content="¥15,781"
+                        style={{
+                            lineHeight: '240px',
+                            fontSize: '30',
+                            fill: '#262626',
+                            textAlign: 'center',
+                        }}
+                    />  
+                    <Coordinate type="theta" radius={0.65} innerRadius={0.75}/>
                     <Legend position="right" />
                     <Tooltip showTitle = {false} />
                     <Geom
                         type="interval"
                         position="value"
                         color="name"
+                        adjust={["stack"]}
                     />
                 </Chart>
             </div>

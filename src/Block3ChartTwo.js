@@ -4,8 +4,8 @@ import {
     Chart,
     Geom,
     Axis,
-    Tooltip,
     Coord,
+    Tooltip,
     Label,
     Legend,
     View,
@@ -15,7 +15,10 @@ import {
     Util
 } from "bizcharts";
 import ReactResizeDetector, { withResizeDetector } from "react-resize-detector";
-class Chart2 extends React.Component {
+
+
+
+class BlockChart extends React.Component {
     render() {
         const data = [
             {
@@ -85,34 +88,40 @@ class Chart2 extends React.Component {
             }
         };
         return (
-            <div>
-                <Chart 
-                width={this.props.width}
-                height={this.props.height}
-                data={data} scale={cols} >
+            <div >
+                <Chart
+                    height={47}
+                    width={this.props.width}
+                    data={data}
+                    scale={cols}
+                >
                     <Legend />
                     <Tooltip
                         crosshairs={{
                             title: "data.temperature",
-                            fillOpacity:0.1,
+                            fillOpacity: 0.1,
                         }}
-                        position={'left','right'}
+                        position={'left', 'right'}
                         inPlot={true}
                         offset={30}
                         Opacity={0.5}
                     />
                     <Axis name="month" visible={false} />
                     <Axis name="temperature" visible={false} />
-                    <Geom  
-                        type="area" 
-                        position="month*temperature" 
+                    <Geom
+                        type="area"
+                        position="month*temperature"
                         size={2}
-                        color="rgb(100,0,255)" 
                         shape="smooth" />
+                    <Geom
+                        type="line"
+                        position="month*temperature"
+                        size={2}
+                    />
                 </Chart>
             </div>
         );
     }
 }
 
-export default withResizeDetector(Chart2);
+export default withResizeDetector(BlockChart);

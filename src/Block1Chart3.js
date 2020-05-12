@@ -14,6 +14,7 @@ import {
     Facet,
     Util
 } from "bizcharts";
+import ReactResizeDetector, { withResizeDetector } from "react-resize-detector";
 
 class Chart3 extends React.Component {
     render() {
@@ -57,29 +58,26 @@ class Chart3 extends React.Component {
             }
         };
         return (
-            <div>
-                <Chart 
-                height={50}
-                width={"auto"}
-                    padding={"auto"}
-                data={data} scale={cols} forceFit>
-                    <Axis name="year" visible={false} />
-                    <Axis name="sales" visible={false} />
-                    <Tooltip
-                        crosshairs={{
-                            title: "data.temperature",
-                            fillOpacity: 0.1,
-                        }}
-                        position={'left', 'right'}
-                        inPlot={true}
-                        offset={30}
-                        Opacity={0.5}
-                    />
-                    <Geom type="interval" position="year*sales" />
-                </Chart>
-            </div>
+            <Chart
+                width={this.props.width}
+                height={this.props.height}
+                data={data} scale={cols} >
+                <Axis name="year" visible={false} />
+                <Axis name="sales" visible={false} />
+                <Tooltip
+                    crosshairs={{
+                        title: "data.temperature",
+                        fillOpacity: 0.1,
+                    }}
+                    position={'left', 'right'}
+                    inPlot={true}
+                    offset={30}
+                    Opacity={0.5}
+                />
+                <Geom type="interval" position="year*sales" />
+            </Chart>
         );
     }
 }
 
-export default Chart3;
+export default withResizeDetector(Chart3);
