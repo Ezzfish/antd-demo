@@ -27,11 +27,11 @@ class BLockThreeChartTwo extends React.Component{
             { name: '母婴用品', value: 13.8 },
             { name: '其他', value: 9.0 },
         ];
+
         return(
             <div>
                 <Chart
                     height={446}
-                    width={400}
                     data={data}
                     autoFit
                 >   
@@ -56,7 +56,9 @@ class BLockThreeChartTwo extends React.Component{
                         }}
                     />  
                     <Coordinate type="theta" radius={0.65} innerRadius={0.75}/>
-                    <Legend position="right" />
+                    <Legend 
+                        position="right"
+                    />
                     <Tooltip showTitle = {false} />
                     <Geom
                         type="interval"

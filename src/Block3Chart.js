@@ -21,7 +21,7 @@ import {
     Facet,
     Util
 } from "bizcharts";
-import BlockChart from './Block3ChartTwo'
+import BlockChart from './Block3ChartChart'
 
 function IndexDescription() {
     return (
