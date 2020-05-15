@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Row, Col, Card, Menu, Dropdown, Radio, Tabs } from 'antd'
 import { DashOutlined } from '@ant-design/icons';
 import BlockFourTabChart from './BlockFourTabChart'
+import BlockFourContentChart from './BlockFourContentChart.js'
 const{TabPane}=Tabs
 function addd(i){
     return(
@@ -25,8 +26,7 @@ class BlockFour extends React.Component{
                     >
                         {[...Array(10).keys()].map(i=>(
                             <TabPane tab={ BlockFourTabChart(value, i) }key={i}>
-                                Content of tab {i}
-                               
+                               <BlockFourContentChart/>
                             </TabPane>
                         ))}
                     </Tabs>

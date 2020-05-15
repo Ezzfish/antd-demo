@@ -24,9 +24,9 @@ function BLockFourTabChart(values,i) {
         { name: '2', value: 100 - values[i] },
     ];
     return (
-        <div style={{ width: 140, height: 140 }}>
+        <div style={{ width: 140, height: 140,paddingRight:8}}>
             <Row padding={[12,0]}>
-                <Col span={16}>
+                <Col span={12}>
                     <div 
                         style={{
                             marginBottom:16,
@@ -45,7 +45,7 @@ function BLockFourTabChart(values,i) {
                         转化率</div>
                     <div
                         style={{
-                            marginRight: 16,
+                            marginRight: 8,
                             color: '#00000085',
                             fontSize: 24
                         }}
@@ -58,7 +58,7 @@ function BLockFourTabChart(values,i) {
                         data={data}
                         width={60}
                         height={100}
-                        padding={[36,0,0,0]}
+                        padding={[18,0,0,0]}
                         pure
                     >
                         <Coordinate type="theta" radius={0.65} innerRadius={0.55} />
