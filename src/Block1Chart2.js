@@ -86,28 +86,28 @@ class Chart2 extends React.Component {
         };
         return (
             <div>
-                <Chart 
-                width={this.props.width}
-                height={this.props.height}
-                data={data} scale={cols} >
+                <Chart
+                    width={this.props.width}
+                    height={this.props.height}
+                    data={data} scale={cols} >
                     <Legend />
                     <Tooltip
                         crosshairs={{
                             title: "data.temperature",
-                            fillOpacity:0.1,
+                            fillOpacity: 0.1,
                         }}
-                        position={'left','right'}
+                        position={'left', 'right'}
                         inPlot={true}
                         offset={30}
                         Opacity={0.5}
                     />
                     <Axis name="month" visible={false} />
                     <Axis name="temperature" visible={false} />
-                    <Geom  
-                        type="area" 
-                        position="month*temperature" 
+                    <Geom
+                        type="area"
+                        position="month*temperature"
                         size={2}
-                        color="rgb(100,0,255)" 
+                        color="rgb(100,0,255)"
                         shape="smooth" />
                 </Chart>
             </div>

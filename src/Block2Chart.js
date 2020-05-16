@@ -73,11 +73,11 @@ class Block2Chart extends React.Component {
             }
         };
         return (
-            <div style={{ paddingLeft:32,paddingBottom:32}}>
+            <div style={{ paddingLeft: 32, paddingBottom: 32 }}>
                 <h4 style={{ marginBottom: 20 }}>{this.props.name}</h4>
                 <Chart
                     height={284}
-                    width={this.props.width-32}
+                    width={this.props.width - 32}
                     data={data} scale={cols}>
                     <Axis name="month" />
                     <Axis name="sales" />

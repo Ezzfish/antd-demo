@@ -25,11 +25,11 @@ class Chart4 extends React.Component {
         ]
         return (
             <div>
-                <Chart 
+                <Chart
                     width={this.props.width}
                     height={this.props.height}
                     data={data} >
-                    
+
                     <Axis name="population" visible={false} />
                     <Coord transpose />
                     <Geom type="interval" color="rgb(19,194,194)" position="population*0.01" />

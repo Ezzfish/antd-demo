@@ -1,11 +1,11 @@
 import React from 'react'
-import {Row, Col, Card, Menu,Dropdown,Radio } from 'antd'
+import { Row, Col, Card, Menu, Dropdown, Radio } from 'antd'
 import { DashOutlined } from '@ant-design/icons';
 import Block3Chart from './Block3Chart.js'
 import BlockThreeTable from './BlockThreeTable.js'
 import BlockThreeChartTwo from './BlockThreeChartTwo.js'
 
-const menu=(
+const menu = (
     <Menu>
         <Menu.Item>
             操作一
@@ -16,19 +16,19 @@ const menu=(
     </Menu>
 )
 
-function ExtraMenu(){
-    return(
+function ExtraMenu() {
+    return (
         <Dropdown overlay={menu} placement="bottomCenter">
-            <DashOutlined/>
+            <DashOutlined />
         </Dropdown>
     )
 }
 
 
- function RadioContent(label){
+function RadioContent(label) {
     return (
         <div>
-            {(label == 'a') && <BlockThreeChartTwo/>}
+            {(label == 'a') && <BlockThreeChartTwo />}
             {(label == 'b') && <div>Contentb</div>}
             {(label == 'c') && <div>Contentc</div>}
         </div>
@@ -37,13 +37,13 @@ function ExtraMenu(){
 
 
 
-class RadioCard extends React.Component{
-    state={
-        label:'a'
+class RadioCard extends React.Component {
+    state = {
+        label: 'a'
     }
 
     handleRadioChange = e => {
-        this.setState({label:e.target.value})
+        this.setState({ label: e.target.value })
     }
 
     ExtraRadio() {
@@ -60,9 +60,9 @@ class RadioCard extends React.Component{
     }
 
 
-    render(){
-        const{label} = this.state
-        return(
+    render() {
+        const { label } = this.state
+        return (
             <Card
                 style={{ height: 543.5 }}
                 class="block1-card"
@@ -71,7 +71,7 @@ class RadioCard extends React.Component{
                 bordered={false}
             >
                 {RadioContent(label)}
-            </Card>  
+            </Card>
         )
     }
 }
@@ -85,21 +85,21 @@ class Block3 extends React.Component {
     render() {
         return (
             <div>
-                <Row  gutter={[8, 16]}>
-                    <Col  xs={24} sm={24} md={24} lg={24} xl={12}>
-                        <Card 
+                <Row gutter={[8, 16]}>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                        <Card
                             style={{ height: '100%' }}
-                            class="block1-card" 
-                            title={'线上热门搜索'} 
-                            extra={ExtraMenu()} 
+                            class="block1-card"
+                            title={'线上热门搜索'}
+                            extra={ExtraMenu()}
                             bordered={false}
                         >
-                            <Block3Chart/>
-                            <BlockThreeTable/>
+                            <Block3Chart />
+                            <BlockThreeTable />
                         </Card>
                     </Col>
-                    <Col  xs={24} sm={24} md={24} lg={24} xl={12}>
-                        <RadioCard/>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={12}>
+                        <RadioCard />
                     </Col>
                 </Row>
             </div>

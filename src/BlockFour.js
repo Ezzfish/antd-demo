@@ -4,29 +4,29 @@ import { Row, Col, Card, Menu, Dropdown, Radio, Tabs } from 'antd'
 import { DashOutlined } from '@ant-design/icons';
 import BlockFourTabChart from './BlockFourTabChart'
 import BlockFourContentChart from './BlockFourContentChart.js'
-const{TabPane}=Tabs
-function addd(i){
-    return(
+const { TabPane } = Tabs
+function addd(i) {
+    return (
         <div>
             {i}
         </div>
     )
-   
+
 }
-class BlockFour extends React.Component{
-    render(){
-        const value=[70,60,20,30,40,40,50,30,20,20]
-        return(
+class BlockFour extends React.Component {
+    render() {
+        const value = [70, 60, 20, 30, 40, 40, 50, 30, 20, 20]
+        return (
             <div>
                 <Card bordered={false}>
-                    <Tabs 
+                    <Tabs
                         defaultActiveKey="1"
                         tabPostion='botton'
-                        style={{height:'100%'}}
+                        style={{ height: '100%' }}
                     >
-                        {[...Array(10).keys()].map(i=>(
-                            <TabPane tab={ BlockFourTabChart(value, i) }key={i}>
-                               <BlockFourContentChart/>
+                        {[...Array(10).keys()].map(i => (
+                            <TabPane tab={BlockFourTabChart(value, i)} key={i}>
+                                <BlockFourContentChart />
                             </TabPane>
                         ))}
                     </Tabs>

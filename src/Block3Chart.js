@@ -53,7 +53,7 @@ class Block3Chart extends React.Component {
                             17.1<CaretUpOutlined style={{ fontSize: '16px', color: '#f5222d', margin: '4px' }} />
                         </span>
                     </div>
-                    <BlockChart/>
+                    <BlockChart />
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={12} xl={12}>
                     <div>
@@ -70,7 +70,7 @@ class Block3Chart extends React.Component {
                             26.2<CaretDownOutlined style={{ fontSize: '16px', color: '#52c41a', margin: '4px' }} />
                         </span>
                     </div>
-                    <BlockChart/>
+                    <BlockChart />
                 </Col>
             </Row>
         )

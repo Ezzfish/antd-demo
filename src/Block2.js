@@ -1,79 +1,79 @@
 import React from 'react'
-import { Card, DatePicker,Row, Col } from 'antd'
+import { Card, DatePicker, Row, Col } from 'antd'
 import moment from 'moment';
 import Block2Chart from './Block2Chart'
 import Block2Item from './Block2Item'
 
 
-const {RangePicker}= DatePicker;
+const { RangePicker } = DatePicker;
 
-function extraContent(){
-    return(
+function extraContent() {
+    return (
         <RangePicker
-            allowEmpty={[Boolean,Boolean]}
+            allowEmpty={[Boolean, Boolean]}
             ranges={{
-                Today:[moment(),moment()],
-                '本月':[moment().startOf('month'),moment().endOf('month')]
+                Today: [moment(), moment()],
+                '本月': [moment().startOf('month'), moment().endOf('month')]
             }}
-         
+
         />
     )
 }
 
 
 const tabListNoTitle = [
-    { 
+    {
         key: 'sale',
         tab: '销售量',
     },
-    { 
+    {
         key: 'visit',
         tab: '访问量',
     }
 ]
 
-function salesContent(ChartName,ItemName) {
+function salesContent(ChartName, ItemName) {
     return (
         <div >
-            <Row 
-                class="block2-row" 
-                style={{ 
+            <Row
+                class="block2-row"
+                style={{
                     marginTop: 4,
-                    marginLeft: -24, 
-                    marginBottom: -16 
+                    marginLeft: -24,
+                    marginBottom: -16
                 }}
             >
                 <Col xs={24} sm={12} md={12} lg={12} xl={16}>
-                    <Block2Chart name={ChartName}/>
+                    <Block2Chart name={ChartName} />
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={12} xl={8}>
-                    <Block2Item name={ItemName}/>
+                    <Block2Item name={ItemName} />
                 </Col>
             </Row>
         </div>
     )
 }
 
-const contentListNoTitle={
-    sale: salesContent('销售趋势','门店销售额排名'),
-    visit: salesContent('访问量趋势','门店访问量排名'),
+const contentListNoTitle = {
+    sale: salesContent('销售趋势', '门店销售额排名'),
+    visit: salesContent('访问量趋势', '门店访问量排名'),
 }
 
-class Block2 extends React.Component{
-    state={
-        noTitleKey:'sale'
+class Block2 extends React.Component {
+    state = {
+        noTitleKey: 'sale'
     }
 
-    
+
     onTabChange = (key, type) => {
         console.log(key, type)
         this.setState({ [type]: key })
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <Card
-                style={{ width: '100%',marginBottom:16 }}
+                style={{ width: '100%', marginBottom: 16 }}
                 tabList={tabListNoTitle}
                 activeTabKey={this.state.noTitleKey}
                 tabBarExtraContent={extraContent()}
