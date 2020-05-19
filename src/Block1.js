@@ -1,7 +1,5 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react'
 import { Tooltip,Row,Col,Card } from 'antd'
-import moment from 'moment'
 import './App.css'
 import {
     InfoCircleOutlined,

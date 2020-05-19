@@ -2,18 +2,9 @@ import React from "react";
 import {
     Chart,
     Geom,
-    Coord,
-    Label,
-    Guide,
-    Shape,
-    Facet,
-    Util,
     Coordinate,
-    Interval,
-    Axis,
     Tooltip,
     Legend,
-    View,
     Annotation,
 } from "bizcharts";
 

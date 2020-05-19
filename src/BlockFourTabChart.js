@@ -3,19 +3,7 @@ import { Row, Col } from 'antd'
 import {
     Chart,
     Geom,
-    Coord,
-    Label,
-    Guide,
-    Shape,
-    Facet,
-    Util,
     Coordinate,
-    Interval,
-    Axis,
-    Tooltip,
-    Legend,
-    View,
-    Annotation,
 } from "bizcharts";
 
 function BLockFourTabChart(values,i) {

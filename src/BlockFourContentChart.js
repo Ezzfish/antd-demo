@@ -2,23 +2,10 @@ import React from "react";
 import {
     Chart,
     Line,
-    Point,
-    Geom,
-    Coord,
-    Label,
-    Guide,
-    Shape,
-    Facet,
-    Util,
-    Coordinate,
-    Interval,
     Axis,
     Tooltip,
     Legend,
-    View,
-    Annotation,
 } from "bizcharts";
-import Grid from "antd/lib/card/Grid";
 
 function BlockFourContentChart() {
     const data = [

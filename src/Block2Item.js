@@ -1,6 +1,5 @@
-import { List, Card, Row, Avatar, Typography } from 'antd'
+import { List, Avatar} from 'antd'
 import React from "react";
-
 
 function ListItem(label) {
     return (

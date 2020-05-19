@@ -1,20 +1,12 @@
 import React from "react";
 import {
-    G2,
     Chart,
     Geom,
     Axis,
-    Coord,
     Tooltip,
-    Label,
     Legend,
-    View,
-    Guide,
-    Shape,
-    Facet,
-    Util
 } from "bizcharts";
-import ReactResizeDetector, { withResizeDetector } from "react-resize-detector";
+import  { withResizeDetector } from "react-resize-detector";
 
 
 

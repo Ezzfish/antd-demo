@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import { Button, } from 'antd';
+import React from 'react';
 import './App.css';
 import Block1 from './Block1'
 import Block2 from './Block2'

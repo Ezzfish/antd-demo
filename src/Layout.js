@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Layout, Menu, Tooltip, Badge, Dropdown, Avatar } from 'antd';
 import 'antd/dist/antd.css';
 import Contents from './Contents'
@@ -19,7 +18,7 @@ import {
     GlobalOutlined,
 } from '@ant-design/icons';
 
-const { Header, Footer,Sider, Content } = Layout;
+const { Header, Footer,Sider} = Layout;
 
 const rightmenu = (
     <Menu>

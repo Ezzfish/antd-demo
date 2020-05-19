@@ -1,20 +1,11 @@
 import React from "react";
 import {
-    G2,
     Chart,
     Geom,
     Axis,
     Tooltip,
-    Coord,
-    Label,
-    Legend,
-    View,
-    Guide,
-    Shape,
-    Facet,
-    Util
 } from "bizcharts";
-import ReactResizeDetector, { withResizeDetector } from "react-resize-detector";
+import  { withResizeDetector } from "react-resize-detector";
 class Block2Chart extends React.Component {
     render() {
         const data = [

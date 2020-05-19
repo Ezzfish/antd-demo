@@ -1,7 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import { Row, Col, Card, Menu, Dropdown, Radio, Tabs } from 'antd'
-import { DashOutlined } from '@ant-design/icons';
+import { Card,Tabs } from 'antd'
 import BlockFourTabChart from './BlockFourTabChart'
 import BlockFourContentChart from './BlockFourContentChart.js'
 const { TabPane } = Tabs
