@@ -1,14 +1,42 @@
 import React from "react";
+import {Button} from 'antd'
 import {
     Chart,
     Geom,
     Axis,
     Tooltip,
 } from "bizcharts";
-import  { withResizeDetector } from "react-resize-detector";
+import { withResizeDetector } from "react-resize-detector";
+import axios from 'axios'
 class Block2Chart extends React.Component {
+    constructor(){
+        super();
+        this.state = {
+            data: {}
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+    handleClick(){
+        axios.get('http://localhost:8000')
+            .then(function (response) {
+                let data =response.data
+                alert(data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        
+    }
     render() {
-        const data = [
+        const data = axios.get('http://localhost:8000')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+
+        /*[
             {
                 month: "1月",
                 sales: 38
@@ -57,7 +85,7 @@ class Block2Chart extends React.Component {
                 month: "12月",
                 sales: 23
             }
-        ];
+        ];*/
         const cols = {
             sales: {
                 tickInterval: 20
@@ -66,6 +94,7 @@ class Block2Chart extends React.Component {
         return (
             <div style={{ paddingLeft: 32, paddingBottom: 32 }}>
                 <h4 style={{ marginBottom: 20 }}>{this.props.name}</h4>
+                <Button onClick={this.handleClick}>测试</Button>
                 <Chart
                     height={284}
                     width={this.props.width - 32}
