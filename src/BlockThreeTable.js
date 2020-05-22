@@ -9,7 +9,7 @@ const columns = [
     {
         title: '搜索关键字',
         dataIndex: 'searchKeywords',
-        render: text => <a>{text}</a>,
+        
     },
     {
         title: '用户数',

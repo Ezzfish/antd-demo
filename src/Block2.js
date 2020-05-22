@@ -3,7 +3,7 @@ import { Card, DatePicker, Row, Col } from 'antd'
 import moment from 'moment';
 import Block2Chart from './Block2Chart'
 import Block2Item from './Block2Item'
-
+import axios from 'axios'
 
 const { RangePicker } = DatePicker;
 
@@ -32,11 +32,12 @@ const tabListNoTitle = [
     }
 ]
 
-function salesContent(ChartName, ItemName) {
+
+function salesContent(ChartName, ItemName,Key) {
     return (
         <div >
             <Row
-                class="block2-row"
+                className="block2-row"
                 style={{
                     marginTop: 4,
                     marginLeft: -24,
@@ -44,7 +45,7 @@ function salesContent(ChartName, ItemName) {
                 }}
             >
                 <Col xs={24} sm={12} md={12} lg={12} xl={16}>
-                    <Block2Chart name={ChartName} />
+                    <Block2Chart name={ChartName} data={Key}/>
                 </Col>
                 <Col xs={24} sm={12} md={12} lg={12} xl={8}>
                     <Block2Item name={ItemName} />
@@ -54,23 +55,21 @@ function salesContent(ChartName, ItemName) {
     )
 }
 
-const contentListNoTitle = {
-    sale: salesContent('销售趋势', '门店销售额排名'),
-    visit: salesContent('访问量趋势', '门店访问量排名'),
-}
 
 class Block2 extends React.Component {
     state = {
-        noTitleKey: 'sale'
+        noTitleKey: 'sale',
     }
-
-
     onTabChange = (key, type) => {
         console.log(key, type)
         this.setState({ [type]: key })
     }
-
+    
     render() {
+        const contentListNoTitle = {
+            sale: salesContent('销售趋势', '门店销售额排名'),
+            visit: salesContent('访问量趋势', '门店访问量排名'),
+        }
         return (
             <Card
                 style={{ width: '100%', marginBottom: 16 }}

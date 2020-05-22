@@ -9,9 +9,9 @@ class Contents extends React.Component{
     render(){
         return(
             <div className = 'Contents' >
-                <main class="Contents-main">
-                    <div class="Contents-main-wrap">
-                        <div class="Contents-main-grid">
+                <main className="Contents-main">
+                    <div className="Contents-main-wrap">
+                        <div className="Contents-main-grid">
                             <Block1/>
                             <Block2/>
                             <Block3/>

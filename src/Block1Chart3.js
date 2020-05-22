@@ -60,7 +60,7 @@ class Chart3 extends React.Component {
                         title: "data.temperature",
                         fillOpacity: 0.1,
                     }}
-                    position={'left', 'right'}
+                    position={'left'}
                     inPlot={true}
                     offset={30}
                     Opacity={0.5}

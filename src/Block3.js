@@ -28,9 +28,9 @@ function ExtraMenu() {
 function RadioContent(label) {
     return (
         <div>
-            {(label == 'a') && <BlockThreeChartTwo />}
-            {(label == 'b') && <div>Contentb</div>}
-            {(label == 'c') && <div>Contentc</div>}
+            {(label === 'a') && <BlockThreeChartTwo />}
+            {(label === 'b') && <BlockThreeChartTwo />}
+            {(label === 'c') && <BlockThreeChartTwo />}
         </div>
     )
 }
@@ -65,7 +65,7 @@ class RadioCard extends React.Component {
         return (
             <Card
                 style={{ height: 543.5 }}
-                class="block1-card"
+                className="block1-card"
                 title={'销售额类别占比'}
                 extra={this.ExtraRadio()}
                 bordered={false}
@@ -89,7 +89,7 @@ class Block3 extends React.Component {
                     <Col xs={24} sm={24} md={24} lg={24} xl={12}>
                         <Card
                             style={{ height: '100%' }}
-                            class="block1-card"
+                            className="block1-card"
                             title={'线上热门搜索'}
                             extra={ExtraMenu()}
                             bordered={false}

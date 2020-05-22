@@ -23,20 +23,20 @@ const { Header, Footer,Sider} = Layout;
 const rightmenu = (
     <Menu>
         <Menu.Item key="0">
-            <a target="_blank" rel="noopener noreferrer" >
+            <div>
                 <UserAddOutlined />个人中心
-            </a>
+            </div>   
         </Menu.Item>
         <Menu.Item key="1">
-            <a target="_blank" rel="noopener noreferrer" >
+            <div>
                 <SettingOutlined />个人设置
-            </a>
+            </div>
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item key="3" >
-            <a target= "_blank" rel="noopener noreferrer">
+            <div>
                 <LogoutOutlined />退出登录
-            </a>   
+            </div>
     </Menu.Item>
     </Menu>
 )
@@ -44,19 +44,19 @@ const rightmenu = (
 const languagemenu = (
     <Menu>
         <Menu.Item key="0">
-            <a target="_blank" rel="noopener noreferrer" >
+            <div>
                 简体中文
-            </a>
+            </div>
         </Menu.Item>
         <Menu.Item key="1">
-            <a target="_blank" rel="noopener noreferrer" >
+            <div>
                 繁体中文
-            </a>
+            </div>
         </Menu.Item>
         <Menu.Item key="3" >
-            <a target="_blank" rel="noopener noreferrer">
+            <div>
                 English
-            </a>
+            </div>
         </Menu.Item>
     </Menu>
 );
@@ -79,10 +79,10 @@ class Layoutall extends React.Component{
 
                     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
                         <Menu.Item key="0">
-                            <span class="sider-children-logo1" >
+                            <span className="sider-children-logo1" >
                                 ant 
                             </span>
-                            <span class="sider-children-logo2" >
+                            <span className="sider-children-logo2" >
                                  design
                             </span>    
                         </Menu.Item>
@@ -102,8 +102,8 @@ class Layoutall extends React.Component{
                 </div>
             </Sider>
             <Layout className="site-layout">
-                <Header class= "header">
-                    <div class= "header-menu">
+                <Header style={{padding:0}}>
+                    <div className= "header-menu">
                         {React.createElement(this.state.collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                             className: 'header-menu-trigger',
                             onClick: this.toggle,
@@ -115,29 +115,29 @@ class Layoutall extends React.Component{
                                     <input></input>
                                 </div>
                             </div>
-                            <div class = "header-menu-right-file">
+                            <div className = "header-menu-right-file">
                                 <Tooltip placement="bottom" title="use file">
                                     <QuestionCircleOutlined/>
                                 </Tooltip>
                             </div>
-                            <div class="header-menu-right-badge">
+                            <div className="header-menu-right-badge">
                                 <Badge  count={11}>
-                                    <span class="header-menu-right-badge-logo">
+                                    <span className="header-menu-right-badge-logo">
                                         <BellOutlined />
                                     </span>
                                 </Badge>
                             </div>
-                            <div class="header-menu-right-user">
+                            <div className="header-menu-right-user">
                                 <Dropdown overlay={rightmenu}>
-                                    <a class="header-menu-right-use-dropdown-link" onClick={e => e.preventDefault()}>
-                                        <span class="header-menu-right-use-dropdown-link-a">
+                                    <div className="header-menu-right-use-dropdown-link" onClick={e => e.preventDefault()}>
+                                        <span className="header-menu-right-use-dropdown-link-a">
                                             <Avatar >u</Avatar>
                                         </span>
                                         <span>Ezzfish</span>   
-                                    </a>
+                                    </div>
                                 </Dropdown>
                             </div>
-                            <div class="header-menu-right-language">
+                            <div className="header-menu-right-language">
                                 <Dropdown overlay={languagemenu}>
                                     <GlobalOutlined />
                                 </Dropdown>
