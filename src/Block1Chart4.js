@@ -2,28 +2,41 @@ import React from "react";
 import {
     Chart,
     Geom,
-    Axis,
     Coord,
 } from "bizcharts";
-import  { withResizeDetector } from "react-resize-detector";
+import axios from 'axios'
+
 class Chart4 extends React.Component {
+    state = {
+        data: []
+    }
+    componentDidMount() {
+        var t = this
+        axios.get(`http://localhost:8000/Block1/populationChart`)
+            .then(function (response) {
+                t.setState({ data: response.data.data })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     render() {
-        const data = [
-            {
-                country: "中国",
-                population: 78
+        const cols = {
+            population: {
+                ticks: [0, 100],
             }
-        ]
+        }
         return (
             <div>
                 <Chart
-                    width={this.props.width}
-                    height={this.props.height}
-                    data={data} >
-
-                    <Axis name="population" visible={false} />
+                    height={45}
+                    data={this.state.data}
+                    scale={cols}
+                    pure
+                    autoFit
+                >
                     <Coord transpose />
-                    <Geom type="interval" color="rgb(19,194,194)" position="population*0.01" />
+                    <Geom type="interval" color="rgb(19,194,194)" position="1*population" />
                 </Chart>
             </div>
         );
@@ -31,4 +44,4 @@ class Chart4 extends React.Component {
 }
 
 
-export default withResizeDetector(Chart4);
+export default Chart4;

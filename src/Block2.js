@@ -3,7 +3,7 @@ import { Card, DatePicker, Row, Col } from 'antd'
 import moment from 'moment';
 import Block2Chart from './Block2Chart'
 import Block2Item from './Block2Item'
-import axios from 'axios'
+
 
 const { RangePicker } = DatePicker;
 

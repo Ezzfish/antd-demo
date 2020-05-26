@@ -1,6 +1,6 @@
-import { List, Avatar} from 'antd'
+import { List, Avatar } from 'antd'
 import React from "react";
-
+import axios from 'axios'
 function ListItem(label) {
     return (
         <div>
@@ -16,7 +16,6 @@ function ListItem(label) {
 
     )
 }
-
 const listData = [];
 for (let i = 1; i < 7; i++) {
     listData.push({
@@ -24,9 +23,21 @@ for (let i = 1; i < 7; i++) {
         title: `工专路${i - 1}号店`
     })
 }
-
 class Block2Item extends React.Component {
-
+    state = {
+        data: [{ population: 0 }]
+    }
+    componentDidMount() {
+        var t = this
+        axios.get(`http://localhost:8000/BlockTwoItem`)
+            .then(function (response) {
+                console.log(response.data.data)
+                t.setState({ data: response.data.data })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     render() {
         return (
             <div>
@@ -44,8 +55,8 @@ class Block2Item extends React.Component {
                             paddingTop: 0
                         }}>
                             <span style={{ margin: '8px' }}>{ListItem(item.num)}</span>
-                            <span style={{}}>{item.title}</span>
-                            <span style={{ marginLeft: 'auto' }}>323,234</span>
+                            <span >{item.title}</span>
+                            <span style={{ marginLeft: 'auto' }}>{this.state.data[0].population}</span>
                         </List.Item>
                     )}
                 />

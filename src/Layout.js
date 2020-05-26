@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Menu, Tooltip, Badge, Dropdown, Avatar } from 'antd';
 import 'antd/dist/antd.css';
 import Contents from './Contents'
-
+import axios from 'axios'
 import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
@@ -64,6 +64,7 @@ const languagemenu = (
 class Layoutall extends React.Component{
     state = {
         collapsed: false,
+        data:0
     };
 
     toggle = () => {
@@ -71,6 +72,16 @@ class Layoutall extends React.Component{
             collapsed: !this.state.collapsed,
         });
     };  
+    componentDidMount() {
+        var t = this
+        axios.get(`http://localhost:8000/Layout`)
+            .then(function (response) {
+                t.setState({ data: response.data.number })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     render (){
     return(
         <Layout>
@@ -121,7 +132,7 @@ class Layoutall extends React.Component{
                                 </Tooltip>
                             </div>
                             <div className="header-menu-right-badge">
-                                <Badge  count={11}>
+                                <Badge  count={this.state.data}>
                                     <span className="header-menu-right-badge-logo">
                                         <BellOutlined />
                                     </span>

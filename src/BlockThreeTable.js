@@ -1,10 +1,10 @@
 import React from 'react'
 import { Table } from 'antd';
-
+import axios from 'axios'
 const columns = [
     {
         title: '排名',
-        dataIndex: 'rank',
+        dataIndex: 'name',
     },
     {
         title: '搜索关键字',
@@ -22,77 +22,32 @@ const columns = [
         sorter: (a, b) => a.weeklyIncrease - b.weeklyIncrease
     },
 ];
-
-const data = [
-    {
-        key: '1',
-        rank: 'John Brown',
-        searchKeywords: 98,
-        users: 60,
-        weeklyIncrease: 70,
-    },
-    {
-        key: '2',
-        rank: 'Jim Green',
-        searchKeywords: 98,
-        users: 66,
-        weeklyIncrease: 89,
-    },
-    {
-        key: '3',
-        rank: 'Joe Black',
-        searchKeywords: 98,
-        users: 90,
-        weeklyIncrease: 70,
-    },
-    {
-        key: '4',
-        rank: 'Jim Red',
-        searchKeywords: 88,
-        users: 99,
-        weeklyIncrease: 89,
-    },
-    {
-        key: '5',
-        rank: 'Jim Red',
-        searchKeywords: 88,
-        users: 99,
-        weeklyIncrease: 89,
-    },
-    {
-        key: '6',
-        rank: 'Jim Red',
-        searchKeywords: 88,
-        users: 99,
-        weeklyIncrease: 89,
-    },
-    {
-        key: '7',
-        rank: 'Jim Red',
-        searchKeywords: 88,
-        users: 99,
-        weeklyIncrease: 89,
-    },
-    {
-        key: '8',
-        rank: 'Jim Red',
-        searchKeywords: 88,
-        users: 99,
-        weeklyIncrease: 89,
-    },
-];
-
 function onChange(pagination, filters, sorter, extra) {
     console.log('params', pagination, filters, sorter, extra);
 }
 class BlockThreeTable extends React.Component{
+    state={
+        data:[]
+    }
+    componentDidMount() {
+        var t = this
+        axios.get(`http://localhost:8000/BlockThreeTable`)
+            .then(function (response) {
+                console.log(response.data)
+                t.setState({ data: response.data.data })
+                console.log(t.state.data)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
     render(){
         return(
             <div >
                 <Table 
                     pagination={{ pageSize: 6, size: 'small' }} 
                     size={"small"} columns={columns} 
-                    dataSource={data} 
+                    dataSource={this.state.data} 
                     onChange={onChange}
                 />
             </div>
