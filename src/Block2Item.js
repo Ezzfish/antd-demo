@@ -31,7 +31,6 @@ class Block2Item extends React.Component {
         var t = this
         axios.get(`http://localhost:8000/BlockTwoItem`)
             .then(function (response) {
-                console.log(response.data.data)
                 t.setState({ data: response.data.data })
             })
             .catch(function (error) {

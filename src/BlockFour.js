@@ -2,11 +2,11 @@ import React from 'react'
 import { Card,Tabs } from 'antd'
 import BlockFourTabChart from './BlockFourTabChart'
 import BlockFourContentChart from './BlockFourContentChart.js'
+
 const { TabPane } = Tabs
 
 class BlockFour extends React.Component {
     render() {
-        const value = [70, 60, 20, 30, 40, 40, 50, 30, 20, 20]
         return (
             <div>
                 <Card bordered={false}>
@@ -16,7 +16,7 @@ class BlockFour extends React.Component {
                         style={{ height: '100%' }}
                     >
                         {[...Array(10).keys()].map(i => (
-                            <TabPane tab={BlockFourTabChart(value, i)} key={i}>
+                            <TabPane tab={<BlockFourTabChart i={i}/>} key={i}>
                                 <BlockFourContentChart />
                             </TabPane>
                         ))}

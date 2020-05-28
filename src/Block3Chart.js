@@ -36,23 +36,22 @@ function IndexDescription() {
 
 
 class Block3Chart extends React.Component {
-    state={
-        search:0,
-        searchRate:0,
-        searchPerson:0,
-        searchPersonRate:0
+    state = {
+        search: 0,
+        searchRate: 0,
+        searchPerson: 0,
+        searchPersonRate: 0
     }
     componentDidMount() {
         var t = this
         axios.get(`http://localhost:8000/BlockThreeChart`)
             .then(function (response) {
-                console.log(response.data.data)
-                t.setState({ 
+                t.setState({
                     search: response.data.search,
-                    searchRate:response.data.searchRate,
-                    searchPerson:response.data.searchPerson,
-                    searchPersonRate:response.data.searchPersonRate,
-                 })
+                    searchRate: response.data.searchRate,
+                    searchPerson: response.data.searchPerson,
+                    searchPersonRate: response.data.searchPersonRate,
+                })
             })
             .catch(function (error) {
                 console.log(error);

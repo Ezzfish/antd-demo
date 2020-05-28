@@ -2,9 +2,7 @@ import React from "react";
 import {
     Chart,
     Geom,
-    Axis,
     Tooltip,
-    Legend,
 } from "bizcharts";
 import axios from 'axios'
 class BlockChart extends React.Component {

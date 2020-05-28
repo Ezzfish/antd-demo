@@ -33,9 +33,7 @@ class BlockThreeTable extends React.Component{
         var t = this
         axios.get(`http://localhost:8000/BlockThreeTable`)
             .then(function (response) {
-                console.log(response.data)
-                t.setState({ data: response.data.data })
-                console.log(t.state.data)
+                t.setState({data: response.data.data})
             })
             .catch(function (error) {
                 console.log(error);
